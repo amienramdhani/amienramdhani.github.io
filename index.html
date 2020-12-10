@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Karcis.com</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial =scale=1">
+
+  <script>
+
+    function toggleMenu() {
+
+        var menu = document.getElementById('menu-3');
+        menu.classList.toggle('menu-open');
+    }
+  </script>
+
+</head>
+<body>
+  <div id="pertama">
+
+    <div id="header">
+      <img src="asset/logo.png" id="logo" alt="">
+      <div id="menu">
+        <img src="asset/nav-icon.png" id="nav-icon" alt="nav" onclick="toggleMenu();">
+        <div id="menu-text" onclick="toggleMenu();">Menu</div>
+        <div class="konten" id="menu-3">
+          <a href="#" class="kolom_3" >Home</a>
+          <a href="#" class="kolom_3 kolom_3_tengah" onclick="return smoothScroll('kedua');">Daftar Tiket</a>
+          <a href="#" class="kolom_3" onclick="return smoothScroll('ketiga');">Kontak</a>          
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="konten">
+
+      <div id="box_sd">
+        <h1>Selamat Datang <br> Karcis.com</h1>
+        <a href="#" onclick="return smoothScroll('kedua');"> Lihat Daftar Tiket </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="kedua">
+    <div class="konten">
+      <h2> Daftar Tiket </h2>
+
+      <div class="kolom_3">
+        <a href="kereta.html">
+          <div class="setiap_karya_gambar">
+            <img src="asset/kai.jpg" alt="">
+            <p>Kereta Api Indonesia</p>
+          </div>
+        </a>
+        <p class="deskripsi">Berbagai Macam Tiket Kereta tersedia disini</p>
+      </div>
+
+      <div class="kolom_3 kolom_3_tengah">
+        <a href="pesawat.html">
+          <div class="setiap_karya_gambar">
+            <img src="asset/pesawat.jpg" alt="">
+            <p>Pesawat </p>
+          </div>
+        </a>
+        <p class="deskripsi">Berbagai Macam Tiket Pesawat tersedia disini</p>
+      </div>
+
+      <div class="kolom_3">
+        <a href="bus.html">
+          <div class="setiap_karya_gambar">
+            <img src="asset/bus.jpg" alt="">
+            <p>Bus</p>
+          </div>
+        </a>
+        <p class="deskripsi"> Berbagai Macam Tiket Bus tersedia disini</p>
+      </div>
+
+    <div class="clear"></div>
+    </div>
+  </div>
+
+  <div id="ketiga">
+    <div class="konten">
+      <h2>Kontak Saya</h2>
+
+      <div class="kolom_2">
+        <form action="" onsubmit="return validasi(this);" novalidate>
+
+          <input type="text" name="nama" placeholder="Nama">
+
+          <input type="email" name="email" placeholder="Email">
+
+          <textarea name="pesan" placeholder="pesan" rows="8" cols="40"></textarea>
+
+          <input type="submit" name="submit" value="Kirim">
+        </form>
+      </div>
+
+      <div class="kolom_2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3172397557096!2d106.83028601413899!3d-6.3529609639189895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec6b07b68ea5%3A0x17da46bdf9308386!2sSTT%20Terpadu%20Nurul%20Fikri%20-%20Kampus%20B!5e0!3m2!1sid!2sid!4v1607527049511!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+
+    <div class="clear"></div>
+    </div>
+  </div>    
+  <div id="footer">     
+    <p> &copy; SekolahKoding 2015 modify Amien_Ramdhani</p>
+    <p>
+      <span class="icon" onclick="setDarkMode(false)">👓</span>
+      <span class="icon" onclick="setDarkMode(true)">🕶️</span>
+    </p>
+  </div>
+
+  <script>
+    if (localStorage.getItem('theme') == 'dark') 
+        setDarkMode(true)
+      
+    function setDarkMode(isDark) {
+      if (isDark) {
+          document.body.setAttribute('id', 'darkmode')          
+          localStorage.setItem('theme', 'dark')
+      }else{
+          document.body.setAttribute('id','') 
+          localStorage.removeItem('theme')
+      }
+    }
+
+  </script>
+
+    <script src="folio.js"> </script>
+</body>
+</html>

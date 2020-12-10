@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portofolio SekolahKoding</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+
+  <script>
+
+    function toggleMenu() {
+
+        var menu = document.getElementById('menu-3');
+        menu.classList.toggle('menu-open');
+    }
+  </script>
+
+</head>
+<body>
+    <div id="header">
+      <img src="asset/logo.png" id="logo" alt="">
+      <div id="menu">
+        <img src="asset/nav-icon.png" id="nav-icon" alt="nav" onclick="toggleMenu();">
+        <div id="menu-text" onclick="toggleMenu();">Menu</div>
+        <div class="konten" id="menu-3">
+          <a href="index.html" class="kolom_3" >Home</a>
+          <a href="index.html" class="kolom_3 kolom_3_tengah" onclick="return smoothScroll('kedua');">Daftar Tiket</a>
+          <a href="index.html" class="kolom_3" onclick="return smoothScroll('ketiga');">Kontak</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:50px;"></div>
+
+    <div class="konten">
+
+      <div class="panah_box panah_box_kr" onclick="galeri_prev();"> < </div>
+
+        <div id="karya_box">
+
+          <div id="karya_box_kr">
+            <h3>Tiket Pesawat</h3>
+            <p class="deskripsi"> Karcis.com menyediakan berbagai macam perjalanan Pesawat di Indonesia
+                dan berbagai macam kelas keretanya</p>
+          </div>
+
+        <!-- kasih tambahan id disini -->
+          <div id="karya_box_knn">
+            <img src="asset/b.png" alt="" id="gambar_show">
+          </div>
+
+        </div>
+
+      <div class="panah_box panah_box_knn"  onclick="galeri_next();"> > </div>
+
+      <div class="clear"></div>
+
+      <div id="karya_lain">
+        <img src="asset/b.png" onclick="galeri_ganti(this);"    class="0">
+        <img src="asset/a.png" onclick="galeri_ganti(this);" class="1">
+        <img src="asset/c.png" onclick="galeri_ganti(this);" class="2">
+      </div>
+    </div>
+
+  <div class="clear"></div>
+  <div id="footer">
+    <p>
+      <span class="icon" onclick="setDarkMode(false)">👓</span>
+      <span class="icon" onclick="setDarkMode(true)">🕶️</span>
+    </p>
+    <p> &copy; SekolahKoding 2015 modify Amien_Ramdhani</p>
+  </div>
+
+  <script>
+    if (localStorage.getItem('theme') == 'dark') 
+        setDarkMode(true)
+      
+    function setDarkMode(isDark) {
+      if (isDark) {
+          document.body.setAttribute('id', 'darkmode')
+          localStorage.setItem('theme', 'dark')
+      }else{
+          document.body.setAttribute('id','')
+          localStorage.removeItem('theme')
+      }
+    }
+
+  </script>
+
+  <script src="folio.js"> </script>
+</body>
+</html>
